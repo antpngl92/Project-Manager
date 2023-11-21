@@ -1,5 +1,6 @@
 export type ProjectMenuProps = {
   projects: Project[];
+  handleProjectCreate: () => void;
 };
 
 export type Project = {

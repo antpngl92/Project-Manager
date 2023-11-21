@@ -3,7 +3,10 @@ import "./index.css";
 import ProjectLabel from "./ProjectLabel/index";
 import { ProjectMenuProps } from "./index.types";
 
-const ProjectMenu: FC<ProjectMenuProps> = ({ projects }) => {
+const ProjectMenu: FC<ProjectMenuProps> = ({
+  projects,
+  handleProjectCreate,
+}) => {
   const [selected, setSelected] = useState<number>();
   const onSelect = (id: number) => setSelected(id);
 
@@ -12,7 +15,7 @@ const ProjectMenu: FC<ProjectMenuProps> = ({ projects }) => {
       <div className="content">
         <h1 className="title">Your Projects</h1>
         <div className="projects-panel">
-          <button className="button-add">
+          <button className="button-add" onClick={handleProjectCreate}>
             <i className="fa-solid fa-plus"></i>
             <span>Add Project</span>
           </button>
