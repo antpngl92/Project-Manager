@@ -1,0 +1,13 @@
+.project {
+  color: #787674;
+  padding: 15px 10px;
+  font-size: 18px;
+}
+
+.project:hover,
+.project.active {
+  cursor: pointer;
+  display: block;
+  background-color: #1d1816;
+  color: #bdb8b7;
+}
