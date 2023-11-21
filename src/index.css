@@ -20,9 +20,11 @@ html {
 }
 
 .main-content-wrapper {
-  border: 1px solid red;
   height: 100%;
   width: 75%;
+  margin-top: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 .side-menu-wrapper {
   width: 25%;
