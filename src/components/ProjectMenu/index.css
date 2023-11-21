@@ -1,0 +1,42 @@
+.side-menu {
+  background: #100e0c;
+  height: 100%;
+  width: 100%;
+  margin-top: 50px;
+  border-top-right-radius: 20px;
+}
+
+.side-menu .content {
+  padding: 80px 40px;
+}
+
+.side-menu .content .title {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.side-menu .content .projects-panel .button-add {
+  background: #322e2b;
+  color: #888481;
+  border: 0;
+  padding: 15px 20px;
+  font-size: 22px;
+  border-radius: 5px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.side-menu .content .projects-panel .button-add:hover {
+  cursor: pointer;
+}
+
+.side-menu .content .projects-panel .button-add .fa-solid {
+  font-size: 16px;
+}
+
+.side-menu .content .projects-panel .projects-list {
+  margin-top: 40px;
+}
