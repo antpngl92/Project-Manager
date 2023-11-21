@@ -1,12 +1,19 @@
-import { Component } from "@components";
-import { Home } from "@pages";
+import { useState } from "react";
+import { ProjectMenu } from "@components";
+import { data } from "./data.mock";
 
 function App() {
+  const [projects, setProjects] = useState(data);
+
   return (
-    <>
-      <Component />
-      <Home />
-    </>
+    <div className="container">
+      <section className="side-menu-wrapper">
+        <ProjectMenu projects={projects} />
+      </section>
+      <section className="main-content-wrapper">
+        <h1>Main Content</h1>
+      </section>
+    </div>
   );
 }
 
