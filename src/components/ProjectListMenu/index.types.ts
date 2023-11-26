@@ -1,8 +1,8 @@
 export type ProjectMenuProps = {
   projects: Project[];
-  handleProjectCreate: () => void;
+  onProjectCreate: () => void;
   selectedProject?: number;
-  handleProjectSelect: (id: number) => void;
+  onProjectSelect: (id: number) => void;
 };
 
 export type Project = {

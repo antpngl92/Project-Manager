@@ -5,16 +5,16 @@ import { ProjectMenuProps } from "./index.types";
 
 const ProjectListMenu: FC<ProjectMenuProps> = ({
   projects,
-  handleProjectCreate,
+  onProjectCreate,
   selectedProject,
-  handleProjectSelect,
+  onProjectSelect,
 }) => {
   return (
     <div className="side-menu">
       <div className="content">
         <h1 className="title">Your Projects</h1>
         <div className="projects-panel">
-          <button className="button-add" onClick={handleProjectCreate}>
+          <button className="button-add" onClick={onProjectCreate}>
             <i className="fa-solid fa-plus"></i>
             <span>Add Project</span>
           </button>
@@ -25,7 +25,7 @@ const ProjectListMenu: FC<ProjectMenuProps> = ({
                 key={id}
                 id={id}
                 active={selectedProject === id}
-                handleSelect={handleProjectSelect}
+                handleSelect={onProjectSelect}
               />
             ))}
           </div>
