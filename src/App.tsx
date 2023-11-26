@@ -1,22 +1,23 @@
 import { useState } from "react";
 import { ProjectListMenu, ProjectCreateForm } from "@components";
 import { data } from "./data.mock";
+import { Project } from "./components/ProjectListMenu/index.types";
 
 function App() {
-  const [projects, setProjects] = useState(data);
-  const [createProject, setCreateProject] = useState(true);
+  const [projects, setProjects] = useState<Project[]>(data);
+  const [createProject, setCreateProject] = useState<boolean>(true);
   const [selected, setSelected] = useState<number>();
 
-  const onProjectCreate = () => setCreateProject((prev) => !prev);
-  const onProjectSelect = (id: number) => setSelected(id);
+  const onProjectCreate = (): void => setCreateProject((prev) => !prev);
+  const onProjectSelect = (id: number): void => setSelected(id);
 
   return (
     <div className="container">
       <section className="side-menu-wrapper">
         <ProjectListMenu
           projects={projects}
-          handleProjectCreate={onProjectCreate}
           selectedProject={selected}
+          handleProjectCreate={onProjectCreate}
           handleProjectSelect={onProjectSelect}
         />
       </section>
