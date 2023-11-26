@@ -2,7 +2,7 @@ export const data = [
   {
     id: 1,
     title: "Learning React",
-    date: "Dec 29, 2024",
+    date: "2023-11-01",
     description: "Learn React from the group.",
     tasks: [],
     active: false,
@@ -10,7 +10,7 @@ export const data = [
   {
     id: 2,
     title: "Mastering React",
-    date: "Dec 29, 2024",
+    date: "2023-11-02",
     description: "Learn React from the group.",
     tasks: [],
     active: false,
