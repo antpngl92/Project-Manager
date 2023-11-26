@@ -3,13 +3,12 @@ import "./index.css";
 import ProjectLabel from "./ProjectLabel/index";
 import { ProjectMenuProps } from "./index.types";
 
-const ProjectMenu: FC<ProjectMenuProps> = ({
+const ProjectListMenu: FC<ProjectMenuProps> = ({
   projects,
   handleProjectCreate,
+  selectedProject,
+  handleProjectSelect,
 }) => {
-  const [selected, setSelected] = useState<number>();
-  const onSelect = (id: number) => setSelected(id);
-
   return (
     <div className="side-menu">
       <div className="content">
@@ -25,8 +24,8 @@ const ProjectMenu: FC<ProjectMenuProps> = ({
                 label={title}
                 key={id}
                 id={id}
-                active={selected === id}
-                handleSelect={onSelect}
+                active={selectedProject === id}
+                handleSelect={handleProjectSelect}
               />
             ))}
           </div>
@@ -36,4 +35,4 @@ const ProjectMenu: FC<ProjectMenuProps> = ({
   );
 };
 
-export default ProjectMenu;
+export default ProjectListMenu;
