@@ -8,8 +8,9 @@ function App() {
   const [onCreateProjectPage, setOnCreateProjectPage] = useState<boolean>(true);
   const [selected, setSelected] = useState<number>();
 
-  const onProjectCreate = (): void => setOnCreateProjectPage((prev) => !prev);
-  const onProjectSelect = (id: number): void => setSelected(id);
+  const handleProjectCreate = (): void =>
+    setOnCreateProjectPage((prev) => !prev);
+  const handleProjectSelect = (id: number): void => setSelected(id);
 
   return (
     <div className="container">
@@ -17,8 +18,8 @@ function App() {
         <ProjectListMenu
           projects={projects}
           selectedProject={selected}
-          handleProjectCreate={onProjectCreate}
-          handleProjectSelect={onProjectSelect}
+          onProjectCreate={handleProjectCreate}
+          onProjectSelect={handleProjectSelect}
         />
       </section>
       <section className="main-content-wrapper">
