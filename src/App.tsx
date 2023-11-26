@@ -5,10 +5,10 @@ import { Project } from "./components/ProjectListMenu/index.types";
 
 function App() {
   const [projects, setProjects] = useState<Project[]>(data);
-  const [createProject, setCreateProject] = useState<boolean>(true);
+  const [onCreateProjectPage, setOnCreateProjectPage] = useState<boolean>(true);
   const [selected, setSelected] = useState<number>();
 
-  const onProjectCreate = (): void => setCreateProject((prev) => !prev);
+  const onProjectCreate = (): void => setOnCreateProjectPage((prev) => !prev);
   const onProjectSelect = (id: number): void => setSelected(id);
 
   return (
@@ -22,8 +22,10 @@ function App() {
         />
       </section>
       <section className="main-content-wrapper">
-        {createProject && <ProjectCreateForm />}
-        {!createProject && <h1>Content</h1>}
+        {onCreateProjectPage && (
+          <ProjectCreateForm handleProjectCreate={setProjects} />
+        )}
+        {!onCreateProjectPage && <h1>Content</h1>}
       </section>
     </div>
   );
