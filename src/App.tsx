@@ -28,7 +28,7 @@ function App() {
       </section>
       <section className="main-content-wrapper">
         {onCreateProjectPage && (
-          <ProjectCreateForm handleProjectCreate={setProjects} />
+          <ProjectCreateForm onProjectCreate={setProjects} />
         )}
         {!onCreateProjectPage && <InitialMessage />}
       </section>

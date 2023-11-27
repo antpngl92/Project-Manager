@@ -18,5 +18,5 @@ export interface ProjectCreateFormElements extends HTMLFormElement {
 }
 
 export type ProjectCreateFormProps = {
-  handleProjectCreate: Dispatch<SetStateAction<Project[]>>;
+  onProjectCreate: Dispatch<SetStateAction<Project[]>>;
 };

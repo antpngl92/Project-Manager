@@ -9,9 +9,7 @@ import { Project } from "../ProjectListMenu/index.types";
 import { data } from "../../data.mock";
 import { Validation } from "./utils";
 
-const ProjectCreateForm: FC<ProjectCreateFormProps> = ({
-  handleProjectCreate,
-}) => {
+const ProjectCreateForm: FC<ProjectCreateFormProps> = ({ onProjectCreate }) => {
   const [inputValues, setInputValues] = useState<ProjectCreateFormValues>({
     title: "",
     description: "",
@@ -57,10 +55,7 @@ const ProjectCreateForm: FC<ProjectCreateFormProps> = ({
       tasks: [],
     };
 
-    handleProjectCreate((oldProjects: Project[]) => [
-      ...oldProjects,
-      newProject,
-    ]);
+    onProjectCreate((oldProjects: Project[]) => [...oldProjects, newProject]);
   };
 
   const handleChange = (
