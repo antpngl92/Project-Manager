@@ -20,6 +20,7 @@ function App() {
       else return "initial-message";
     });
   const handleProjectSelect = (id: number): void => setSelected(id);
+  const toInitialMessage = () => setAppState("initial-message");
 
   return (
     <div className="container">
@@ -33,7 +34,10 @@ function App() {
       </section>
       <section className="main-content-wrapper">
         {appState === "project-create" && (
-          <ProjectCreateForm onProjectCreate={setProjects} />
+          <ProjectCreateForm
+            onProjectCreate={setProjects}
+            onCreateCancel={toInitialMessage}
+          />
         )}
         {appState === "initial-message" && (
           <div className="initial-message">

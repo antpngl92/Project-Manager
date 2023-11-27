@@ -9,7 +9,10 @@ import { Project } from "../ProjectListMenu/index.types";
 import { data } from "../../data.mock";
 import { Validation } from "./utils";
 
-const ProjectCreateForm: FC<ProjectCreateFormProps> = ({ onProjectCreate }) => {
+const ProjectCreateForm: FC<ProjectCreateFormProps> = ({
+  onProjectCreate,
+  onCreateCancel,
+}) => {
   const [inputValues, setInputValues] = useState<ProjectCreateFormValues>({
     title: "",
     description: "",
@@ -71,8 +74,12 @@ const ProjectCreateForm: FC<ProjectCreateFormProps> = ({ onProjectCreate }) => {
   return (
     <form className="project-create-form" onSubmit={handleSubmit}>
       <div className="button-group">
-        <button className="button-cancel">Cancel</button>
-        <button className="button-save">Save</button>
+        <button className="button-cancel" onClick={onCreateCancel}>
+          Cancel
+        </button>
+        <button type="submit" className="button-save">
+          Save
+        </button>
       </div>
       <div className="input-wrapper">
         <p>
