@@ -14,13 +14,9 @@ function App() {
   >("initial-message");
   const [selected, setSelected] = useState<number>();
 
-  const handleProjectCreate = (): void =>
-    setAppState((prevState: string) => {
-      if (prevState === "initial-message") return "project-create";
-      else return "initial-message";
-    });
   const handleProjectSelect = (id: number): void => setSelected(id);
   const toInitialMessage = () => setAppState("initial-message");
+  const toCreateProjectForm = () => setAppState("project-create");
 
   return (
     <div className="container">
@@ -28,7 +24,7 @@ function App() {
         <ProjectListMenu
           projects={projects}
           selectedProject={selected}
-          onProjectCreate={handleProjectCreate}
+          onProjectCreate={toCreateProjectForm}
           onProjectSelect={handleProjectSelect}
         />
       </section>
