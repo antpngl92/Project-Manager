@@ -1,5 +1,9 @@
 import { useState } from "react";
-import { ProjectListMenu, ProjectCreateForm } from "@components";
+import {
+  ProjectListMenu,
+  ProjectCreateForm,
+  InitialMessage,
+} from "@components";
 import { data } from "./data.mock";
 import { Project } from "./components/ProjectListMenu/index.types";
 
@@ -26,7 +30,7 @@ function App() {
         {onCreateProjectPage && (
           <ProjectCreateForm handleProjectCreate={setProjects} />
         )}
-        {!onCreateProjectPage && <h1>Content</h1>}
+        {!onCreateProjectPage && <InitialMessage />}
       </section>
     </div>
   );
