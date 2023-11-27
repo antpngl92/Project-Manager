@@ -74,7 +74,11 @@ const ProjectCreateForm: FC<ProjectCreateFormProps> = ({
   return (
     <form className="project-create-form" onSubmit={handleSubmit}>
       <div className="button-group">
-        <button className="button-cancel" onClick={onCreateCancel}>
+        <button
+          type="button"
+          className="button-cancel"
+          onClick={onCreateCancel}
+        >
           Cancel
         </button>
         <button type="submit" className="button-save">
