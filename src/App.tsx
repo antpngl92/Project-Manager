@@ -9,11 +9,16 @@ import { Project } from "./components/ProjectListMenu/index.types";
 
 function App() {
   const [projects, setProjects] = useState<Project[]>(data);
-  const [onCreateProjectPage, setOnCreateProjectPage] = useState<boolean>(true);
+  const [appState, setAppState] = useState<
+    "initial-message" | "project-create" | "project-edit"
+  >("initial-message");
   const [selected, setSelected] = useState<number>();
 
   const handleProjectCreate = (): void =>
-    setOnCreateProjectPage((prev) => !prev);
+    setAppState((prevState: string) => {
+      if (prevState === "initial-message") return "project-create";
+      else return "initial-message";
+    });
   const handleProjectSelect = (id: number): void => setSelected(id);
 
   return (
@@ -27,10 +32,14 @@ function App() {
         />
       </section>
       <section className="main-content-wrapper">
-        {onCreateProjectPage && (
+        {appState === "project-create" && (
           <ProjectCreateForm onProjectCreate={setProjects} />
         )}
-        {!onCreateProjectPage && <InitialMessage />}
+        {appState === "initial-message" && (
+          <div className="initial-message">
+            <InitialMessage />
+          </div>
+        )}
       </section>
     </div>
   );

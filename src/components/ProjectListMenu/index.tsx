@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import "./index.css";
 import ProjectLabel from "./ProjectLabel/index";
 import { ProjectMenuProps } from "./index.types";
