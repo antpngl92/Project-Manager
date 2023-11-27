@@ -37,7 +37,7 @@ function App() {
         )}
         {appState === "initial-message" && (
           <div className="initial-message">
-            <InitialMessage />
+            <InitialMessage onProjectCreate={toCreateProjectForm} />
           </div>
         )}
       </section>

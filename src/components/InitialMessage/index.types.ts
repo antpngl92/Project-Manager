@@ -1,1 +1,3 @@
-export type InitialMessageProps = {};
+export type InitialMessageProps = {
+  onProjectCreate: () => void;
+};
